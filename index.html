@@ -1,301 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayed Ali Farhan | Portfolio</title>
 
-<title>Sayed Ali Farhan | Developer Portfolio</title>
-
-<meta name="description" content="Portfolio of Sayed Ali Farhan - Student Developer specializing in Web Development and Python">
-<meta property="og:title" content="Sayed Ali Farhan Portfolio">
-<meta property="og:description" content="Student Developer | Web Development | Python Projects">
-<meta property="og:type" content="website">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: 'Inter', sans-serif;
-  background: #0b1220;
-  color: #e5e7eb;
-}
-
-/* NAV */
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(11,18,32,0.85);
-  backdrop-filter: blur(12px);
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 12px;
-  z-index: 1000;
-}
-
-nav a {
-  color: #94a3b8;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-nav a:hover { color: #38bdf8; }
-
-/* HEADER */
-header {
-  text-align: center;
-  padding: 140px 20px 70px;
-  background: radial-gradient(circle at top, #1e3a8a, #0b1220);
-}
-
-header img {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  border: 4px solid #38bdf8;
-  object-fit: cover;
-  box-shadow: 0 0 35px rgba(56,189,248,0.4);
-}
-
-header h1 {
-  font-size: 52px;
-  color: #38bdf8;
-  margin-top: 15px;
-}
-
-.typing {
-  color: #94a3b8;
-  margin-top: 8px;
-  min-height: 25px;
-}
-
-/* BUTTON */
-.btn {
-  display: inline-block;
-  margin-top: 18px;
-  padding: 12px 20px;
-  background: #38bdf8;
-  color: #0b1220;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  transform: scale(1.05);
-  background: #0ea5e9;
-}
-
-/* CONTAINER */
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 50px 20px;
-}
-
-/* CARDS */
-.card {
-  margin: 25px 0;
-  padding: 25px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(56,189,248,0.15);
-  border-radius: 18px;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 0.6s ease;
-}
-
-.card.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* STATS */
-.stats {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.stat-box {
-  flex: 1;
-  min-width: 150px;
-  padding: 15px;
-  border-radius: 12px;
-  background: rgba(255,255,255,0.03);
-  text-align: center;
-}
-
-/* PROJECTS */
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 15px;
-}
-
-.project {
-  padding: 20px;
-  border-radius: 14px;
-  border: 1px solid rgba(56,189,248,0.15);
-  background: rgba(255,255,255,0.03);
-  transition: 0.3s;
-}
-
-.project:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(56,189,248,0.2);
-}
-
-/* CONTACT */
-input, textarea {
-  width: 100%;
-  margin-top: 10px;
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
-  background: #1e293b;
-  color: white;
-}
-
-textarea { height: 100px; }
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 30px;
-  color: #64748b;
-  border-top: 1px solid #1e293b;
-}
-</style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#stats">Stats</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
-</nav>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="peace.html">Peace</a>
+        <a href="certificates.html">Certificates</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+    </nav>
 
-<header>
-  <img src="file_00000000e6d47246824fc5163f2b9a1b.png">
-  <h1>Sayed Ali Farhan</h1>
-  <div class="typing" id="typing"></div>
+    <header>
 
-  <a class="btn" href="https://github.com/haidarisayedali6-ux" target="_blank">GitHub Profile</a>
-  <a class="btn" href="resume.pdf" download>Download CV</a>
-</header>
+        <img src="profile.png" alt="Sayed Ali Farhan">
 
-<div class="container">
+        <h1>Sayed Ali Farhan</h1>
 
-  <!-- ABOUT -->
-  <div class="card" id="about">
-    <h2>👨‍💻 About Me</h2>
-    <p>
-      Student developer focused on web development, Python, and building real-world projects for scholarships and future internships.
-    </p>
-  </div>
+        <p>
+            Student • Developer • Community Leader • Peace Advocate
+        </p>
 
-  <!-- STATS (REAL GITHUB LOOK STYLE) -->
-  <div class="card" id="stats">
-    <h2>📊 GitHub & Achievements</h2>
+        <a href="projects.html" class="btn">
+            View My Projects
+        </a>
 
-    <div class="stats">
-      <div class="stat-box">
-        <h3>Projects</h3>
-        <p>5+</p>
-      </div>
+    </header>
 
-      <div class="stat-box">
-        <h3>Skills</h3>
-        <p>HTML • CSS • JS • Python</p>
-      </div>
+    <section>
 
-      <div class="stat-box">
-        <h3>Goal</h3>
-        <p>Software Engineer</p>
-      </div>
-    </div>
-  </div>
+        <h2>👋 Welcome</h2>
 
-  <!-- PROJECTS -->
-  <div class="card" id="projects">
-    <h2>🚀 Projects</h2>
+        <div class="card">
 
-    <div class="projects">
-      <div class="project">
-        <h3>Portfolio Website</h3>
-        <p>Hosted on GitHub Pages with animations.</p>
-      </div>
+            <p>
 
-      <div class="project">
-        <h3>Python Projects</h3>
-        <p>Logic and automation practice programs.</p>
-      </div>
+                Welcome to my personal portfolio website.
 
-      <div class="project">
-        <h3>Mini Web Apps</h3>
-        <p>JavaScript UI experiments.</p>
-      </div>
-    </div>
-  </div>
+                I am a student from Afghanistan who enjoys programming,
+                web development, leadership, and community service.
+                My goal is to use technology and education to create
+                positive impact while continuously improving my skills.
 
-  <!-- CONTACT -->
-  <div class="card" id="contact">
-    <h2>📬 Contact</h2>
+            </p>
 
-    <form action="mailto:haidarisayedali6@email.com">
-      <input type="text" placeholder="Your Name">
-      <input type="email" placeholder="Your Email">
-      <textarea placeholder="Message"></textarea>
-      <button class="btn" type="submit">Send</button>
-    </form>
-  </div>
+        </div>
 
-</div>
+    </section>
 
-<footer>
-  © 2026 Sayed Ali Farhan • Ultimate Mode Portfolio 🚀
-</footer>
+    <section>
 
-<script>
-// scroll reveal
-const cards = document.querySelectorAll('.card');
+        <h2>💻 Skills</h2>
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    }
-  });
-}, { threshold: 0.15 });
+        <div class="card">
 
-cards.forEach(c => observer.observe(c));
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Python</span>
+            <span class="tag">Git</span>
+            <span class="tag">GitHub</span>
 
-// typing effect
-const text = "Student • Developer • Future Engineer";
-let i = 0;
+        </div>
 
-function type() {
-  if (i < text.length) {
-    document.getElementById("typing").innerHTML += text.charAt(i);
-    i++;
-    setTimeout(type, 60);
-  }
-}
-type();
-</script>
+    </section>
+
+    <section>
+
+        <h2>🚀 Featured Areas</h2>
+
+        <div class="card">
+            <h3>Projects</h3>
+            <p>Programming and web development projects.</p>
+        </div>
+
+        <div class="card">
+            <h3>International Cities of Peace</h3>
+            <p>My involvement in peacebuilding and community initiatives.</p>
+        </div>
+
+        <div class="card">
+            <h3>Certificates</h3>
+            <p>Professional certificates from international organizations and learning platforms.</p>
+        </div>
+
+    </section>
+
+    <section>
+
+        <h2>🌍 My Mission</h2>
+
+        <div class="card">
+
+            <p>
+
+                I believe education, technology, and community service
+                can help create better opportunities for young people.
+                Through continuous learning and practical projects,
+                I aim to contribute to positive change locally and globally.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        © 2026 Sayed Ali Farhan • Built with HTML, CSS & GitHub Pages
+
+    </footer>
 
 </body>
-  </html>
+
+          </html>
