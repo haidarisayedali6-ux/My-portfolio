@@ -1,1 +1,174 @@
+/* =========================
+   GLOBAL SETTINGS
+========================= */
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#0b1220;
+    color:#ffffff;
+    line-height:1.7;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:center;
+    gap:30px;
+
+    background:#111827;
+    padding:18px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    text-align:center;
+    padding:90px 20px;
+    background:linear-gradient(#1e3a8a,#0b1220);
+}
+
+header img{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #38bdf8;
+    margin-bottom:20px;
+}
+
+header h1{
+    color:#38bdf8;
+    font-size:48px;
+}
+
+header p{
+    margin-top:10px;
+    color:#cbd5e1;
+    font-size:20px;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+section{
+    max-width:1000px;
+    margin:auto;
+    padding:70px 25px;
+}
+
+h2{
+    color:#38bdf8;
+    margin-bottom:20px;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+    background:#111827;
+    border-radius:15px;
+    padding:25px;
+    margin:20px 0;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 22px;
+    border-radius:10px;
+    background:#38bdf8;
+    color:#0b1220;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#0ea5e9;
+}
+
+/* =========================
+   TAGS
+========================= */
+
+.tag{
+    display:inline-block;
+    padding:8px 14px;
+    background:#1f2937;
+    border-radius:25px;
+    margin:5px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#94a3b8;
+    border-top:1px solid #1f2937;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+nav{
+flex-wrap:wrap;
+gap:15px;
+}
+
+header h1{
+font-size:34px;
+}
+
+header img{
+width:140px;
+height:140px;
+}
+
+  }
