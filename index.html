@@ -23,18 +23,61 @@ body {
   background: #0b1220;
   color: #e5e7eb;
   line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* BACKGROUND ANIMATION */
+body::before {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(56,189,248,0.08), transparent 60%);
+  animation: moveBG 12s linear infinite;
+  z-index: -1;
+}
+
+@keyframes moveBG {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* NAVBAR */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(11,18,32,0.8);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 12px;
+  z-index: 1000;
+}
+
+nav a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #38bdf8;
 }
 
 /* HEADER */
 header {
   text-align: center;
-  padding: 110px 20px;
+  padding: 140px 20px 80px;
   background: radial-gradient(circle at top, #1e3a8a, #0b1220);
 }
 
 header img {
-  width: 180px;
-  height: 180px;
+  width: 170px;
+  height: 170px;
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid #38bdf8;
@@ -43,15 +86,15 @@ header img {
 }
 
 header h1 {
-  font-size: 54px;
+  font-size: 52px;
   color: #38bdf8;
-  margin-bottom: 10px;
-  font-weight: 700;
 }
 
-header p {
+.typing {
   color: #94a3b8;
   font-size: 18px;
+  margin-top: 8px;
+  min-height: 24px;
 }
 
 .btn {
@@ -63,19 +106,13 @@ header p {
   text-decoration: none;
   border-radius: 10px;
   font-weight: 600;
-  transition: 0.3s;
 }
 
-.btn:hover {
-  background: #0ea5e9;
-  transform: scale(1.05);
-}
-
-/* CONTAINER */
+/* SECTIONS */
 .container {
   max-width: 1050px;
   margin: auto;
-  padding: 50px 20px;
+  padding: 60px 20px;
 }
 
 /* CARDS */
@@ -85,45 +122,55 @@ header p {
   padding: 30px;
   margin: 22px 0;
   border-radius: 18px;
-  transition: all 0.3s ease;
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 12px 35px rgba(56,189,248,0.15);
 }
 
-h2 {
-  color: #38bdf8;
-  margin-bottom: 12px;
-  font-size: 22px;
+/* SKILLS */
+.skill {
+  margin: 10px 0;
 }
 
-/* TAGS */
-.tag {
-  display: inline-block;
-  padding: 6px 12px;
-  margin: 6px 6px 0 0;
+.bar {
   background: #1e293b;
-  border-radius: 20px;
-  font-size: 12px;
-  border: 1px solid #334155;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-/* LIST */
-ul {
-  padding-left: 18px;
-  color: #cbd5e1;
+.bar span {
+  display: block;
+  height: 8px;
+  background: #38bdf8;
 }
 
-/* CONTACT */
-a {
-  color: #38bdf8;
-  text-decoration: none;
+/* PROJECT CARDS */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
 }
 
-a:hover {
-  text-decoration: underline;
+.project {
+  background: rgba(255,255,255,0.04);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(56,189,248,0.15);
+  transition: 0.3s;
+}
+
+.project:hover {
+  transform: scale(1.05);
 }
 
 /* FOOTER */
@@ -132,71 +179,90 @@ footer {
   padding: 30px;
   color: #64748b;
   border-top: 1px solid #1e293b;
-  margin-top: 50px;
-  font-size: 14px;
 }
 
 /* MOBILE */
 @media (max-width: 600px) {
-  header h1 {
-    font-size: 38px;
-  }
-
-  header img {
-    width: 140px;
-    height: 140px;
-  }
+  header h1 { font-size: 36px; }
 }
 </style>
 </head>
 
 <body>
 
+<nav>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+
 <header>
-  <img src="file_00000000e6d47246824fc5163f2b9a1b.png" alt="Profile Photo">
-
+  <img src="file_00000000e6d47246824fc5163f2b9a1b.png">
   <h1>Sayed Ali Farhan</h1>
-
-  <p>Student • Developer • Tech Enthusiast</p>
-
+  <div class="typing" id="typing"></div>
   <a href="#contact" class="btn">Contact Me</a>
 </header>
 
 <div class="container">
 
-  <div class="card">
+  <div class="card" id="about">
     <h2>👨‍💻 About Me</h2>
     <p>
-      I am a passionate student from Afghanistan interested in technology, programming,
-      and building real-world projects. I enjoy learning web development and improving my skills step by step.
+      Passionate student from Afghanistan learning web development and programming.
     </p>
 
-    <span class="tag">HTML</span>
-    <span class="tag">CSS</span>
-    <span class="tag">JavaScript</span>
-    <span class="tag">Python</span>
+    <div class="skill">HTML <div class="bar"><span style="width:90%"></span></div></div>
+    <div class="skill">CSS <div class="bar"><span style="width:85%"></span></div></div>
+    <div class="skill">JavaScript <div class="bar"><span style="width:70%"></span></div></div>
+    <div class="skill">Python <div class="bar"><span style="width:75%"></span></div></div>
   </div>
 
-  <div class="card">
+  <div class="card" id="projects">
     <h2>🚀 Projects</h2>
-    <ul>
-      <li>Personal Portfolio Website (Live on GitHub Pages)</li>
-      <li>Python Beginner Projects</li>
-      <li>More projects coming soon</li>
-    </ul>
+    <div class="projects">
+      <div class="project">Portfolio Website</div>
+      <div class="project">Python Projects</div>
+      <div class="project">Coming Soon</div>
+    </div>
   </div>
 
   <div class="card" id="contact">
     <h2>📬 Contact</h2>
-    <p>Email: <a href="mailto:haidarisayedali6@email.com">Send Email</a></p>
-    <p>GitHub: <a href="https://github.com/">Visit GitHub</a></p>
+    <p>Email: haidarisayedali6@email.com</p>
   </div>
 
 </div>
 
 <footer>
-  © 2026 Sayed Ali Farhan • Built with consistency 🚀
+  © 2026 Sayed Ali Farhan
 </footer>
 
+<script>
+// Scroll animation
+const cards = document.querySelectorAll('.card');
+function show() {
+  const trigger = window.innerHeight * 0.85;
+  cards.forEach(c => {
+    if (c.getBoundingClientRect().top < trigger) {
+      c.classList.add('show');
+    }
+  });
+}
+window.addEventListener('scroll', show);
+window.addEventListener('load', show);
+
+// Typing animation
+const text = "Student • Developer • Tech Enthusiast";
+let i = 0;
+function type() {
+  if (i < text.length) {
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(type, 60);
+  }
+}
+type();
+</script>
+
 </body>
-</html>
+  </html>
