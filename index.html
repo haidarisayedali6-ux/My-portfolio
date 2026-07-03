@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sayed Ali Farhan | Elite Portfolio</title>
+
+<title>Sayed Ali Farhan | Final Boss Portfolio</title>
+<meta name="description" content="Personal portfolio of Sayed Ali Farhan - Developer, Student, and Tech Enthusiast">
+<meta name="keywords" content="portfolio, developer, student, python, web developer">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -22,15 +25,6 @@ body {
   font-family: 'Inter', sans-serif;
   background: #0b1220;
   color: #e5e7eb;
-  overflow-x: hidden;
-}
-
-/* PARTICLE BACKGROUND */
-#particles {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
 }
 
 /* NAV */
@@ -38,11 +32,11 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(11,18,32,0.8);
+  background: rgba(11,18,32,0.85);
   backdrop-filter: blur(12px);
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: 20px;
   padding: 12px;
   z-index: 1000;
 }
@@ -60,7 +54,7 @@ nav a:hover {
 /* HEADER */
 header {
   text-align: center;
-  padding: 150px 20px 90px;
+  padding: 150px 20px 80px;
   background: radial-gradient(circle at top, #1e3a8a, #0b1220);
 }
 
@@ -70,27 +64,26 @@ header img {
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid #38bdf8;
-  box-shadow: 0 0 35px rgba(56,189,248,0.5);
-  margin-bottom: 15px;
+  box-shadow: 0 0 40px rgba(56,189,248,0.5);
 }
 
 header h1 {
   font-size: 54px;
   color: #38bdf8;
+  margin-top: 15px;
 }
 
 .typing {
   color: #94a3b8;
   font-size: 18px;
-  min-height: 24px;
-  margin-top: 8px;
+  min-height: 25px;
 }
 
-/* BUTTON */
+/* BUTTONS */
 .btn {
   display: inline-block;
   margin-top: 20px;
-  padding: 12px 22px;
+  padding: 12px 20px;
   background: #38bdf8;
   color: #0b1220;
   border-radius: 10px;
@@ -104,34 +97,29 @@ header h1 {
   background: #0ea5e9;
 }
 
-/* SECTIONS */
+/* CONTAINER */
 .container {
   max-width: 1100px;
   margin: auto;
   padding: 60px 20px;
 }
 
-/* CARDS */
-.card {
+/* SECTIONS */
+.section {
+  margin: 30px 0;
+  padding: 30px;
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(56,189,248,0.15);
-  padding: 30px;
-  margin: 25px 0;
   border-radius: 18px;
 
   opacity: 0;
   transform: translateY(40px);
-  transition: all 0.6s ease;
+  transition: 0.7s ease;
 }
 
-.card.show {
+.section.show {
   opacity: 1;
   transform: translateY(0);
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(56,189,248,0.15);
 }
 
 /* SKILLS */
@@ -159,21 +147,31 @@ header h1 {
 }
 
 .project {
-  background: rgba(255,255,255,0.04);
   padding: 20px;
   border-radius: 14px;
   border: 1px solid rgba(56,189,248,0.15);
+  background: rgba(255,255,255,0.03);
   transition: 0.3s;
 }
 
 .project:hover {
-  transform: scale(1.05);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(56,189,248,0.15);
 }
 
-.project img {
+/* CONTACT FORM */
+input, textarea {
   width: 100%;
-  border-radius: 10px;
-  margin-bottom: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  background: #1e293b;
+  border: none;
+  color: white;
+  border-radius: 8px;
+}
+
+textarea {
+  height: 100px;
 }
 
 /* FOOTER */
@@ -187,7 +185,7 @@ footer {
 /* MOBILE */
 @media (max-width: 600px) {
   header h1 {
-    font-size: 38px;
+    font-size: 36px;
   }
 }
 </style>
@@ -195,11 +193,10 @@ footer {
 
 <body>
 
-<canvas id="particles"></canvas>
-
 <!-- NAV -->
 <nav>
   <a href="#about">About</a>
+  <a href="#skills">Skills</a>
   <a href="#projects">Projects</a>
   <a href="#contact">Contact</a>
 </nav>
@@ -209,71 +206,83 @@ footer {
   <img src="file_00000000e6d47246824fc5163f2b9a1b.png">
   <h1>Sayed Ali Farhan</h1>
   <div class="typing" id="typing"></div>
-  <a href="#contact" class="btn">Contact Me</a>
+
+  <a href="resume.pdf" class="btn">Download CV</a>
 </header>
 
 <div class="container">
 
   <!-- ABOUT -->
-  <div class="card" id="about">
+  <div class="section" id="about">
     <h2>👨‍💻 About Me</h2>
-    <p>I am a passionate student from Afghanistan learning web development, Python, and building real projects for my future career.</p>
+    <p>
+      I am a passionate student from Afghanistan focused on web development, Python, and building real-world projects for my future career in tech.
+    </p>
+  </div>
 
-    <div class="skill">HTML <div class="bar"><span style="width:90%"></span></div></div>
-    <div class="skill">CSS <div class="bar"><span style="width:85%"></span></div></div>
-    <div class="skill">JavaScript <div class="bar"><span style="width:75%"></span></div></div>
-    <div class="skill">Python <div class="bar"><span style="width:80%"></span></div></div>
+  <!-- SKILLS -->
+  <div class="section" id="skills">
+    <h2>📊 Skills</h2>
+
+    <div class="skill">HTML <div class="bar"><span style="width:92%"></span></div></div>
+    <div class="skill">CSS <div class="bar"><span style="width:88%"></span></div></div>
+    <div class="skill">JavaScript <div class="bar"><span style="width:78%"></span></div></div>
+    <div class="skill">Python <div class="bar"><span style="width:82%"></span></div></div>
   </div>
 
   <!-- PROJECTS -->
-  <div class="card" id="projects">
+  <div class="section" id="projects">
     <h2>🚀 Projects</h2>
 
     <div class="projects">
       <div class="project">
-        <img src="https://via.placeholder.com/400x200">
-        Portfolio Website
+        <h3>Portfolio Website</h3>
+        <p>Live GitHub Pages portfolio with animations.</p>
       </div>
 
       <div class="project">
-        <img src="https://via.placeholder.com/400x200">
-        Python Projects
+        <h3>Python Projects</h3>
+        <p>Logic, automation, and beginner coding projects.</p>
       </div>
 
       <div class="project">
-        <img src="https://via.placeholder.com/400x200">
-        JavaScript Apps
+        <h3>JavaScript Apps</h3>
+        <p>Small interactive UI projects.</p>
       </div>
     </div>
   </div>
 
   <!-- CONTACT -->
-  <div class="card" id="contact">
-    <h2>📬 Contact</h2>
-    <p>Email: haidarisayedali6@email.com</p>
+  <div class="section" id="contact">
+    <h2>📬 Contact Me</h2>
+
+    <form action="mailto:haidarisayedali6@email.com" method="post" enctype="text/plain">
+      <input type="text" placeholder="Your Name">
+      <input type="email" placeholder="Your Email">
+      <textarea placeholder="Your Message"></textarea>
+      <button class="btn" type="submit">Send Message</button>
+    </form>
   </div>
 
 </div>
 
 <footer>
-  © 2026 Sayed Ali Farhan • Elite Portfolio 🚀
+  © 2026 Sayed Ali Farhan • Final Boss Portfolio 🚀
 </footer>
 
 <script>
-// scroll reveal
-const cards = document.querySelectorAll('.card');
+// scroll animation
+const sections = document.querySelectorAll('.section');
 
-function reveal() {
-  const trigger = window.innerHeight * 0.85;
-  cards.forEach(c => {
-    if (c.getBoundingClientRect().top < trigger) {
-      c.classList.add('show');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
     }
   });
-}
+}, { threshold: 0.15 });
 
-window.addEventListener('scroll', reveal);
-window.addEventListener('load', reveal);
+sections.forEach(s => observer.observe(s));
 
 // typing effect
 const text = "Student • Developer • Future Engineer";
@@ -287,43 +296,7 @@ function type() {
   }
 }
 type();
-
-// simple particles
-const canvas = document.getElementById("particles");
-const ctx = canvas.getContext("2d");
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let particles = [];
-
-for (let i = 0; i < 60; i++) {
-  particles.push({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    r: Math.random() * 2
-  });
-}
-
-function draw() {
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-
-  ctx.fillStyle = "rgba(56,189,248,0.4)";
-
-  particles.forEach(p => {
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
-    ctx.fill();
-
-    p.y -= 0.3;
-    if (p.y < 0) p.y = canvas.height;
-  });
-
-  requestAnimationFrame(draw);
-}
-
-draw();
 </script>
 
 </body>
-</html>
+    </html>
