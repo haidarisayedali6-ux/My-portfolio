@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Portfolio</title>
+<title>Sayed Ali Farhan | Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -14,82 +14,97 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   background: #0b1220;
   color: #e5e7eb;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 /* HEADER */
 header {
   text-align: center;
-  padding: 90px 20px;
+  padding: 110px 20px;
   background: radial-gradient(circle at top, #1e3a8a, #0b1220);
 }
 
+header img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #38bdf8;
+  box-shadow: 0 0 30px rgba(56,189,248,0.45);
+  margin-bottom: 18px;
+}
+
 header h1 {
-  font-size: 50px;
+  font-size: 54px;
   color: #38bdf8;
+  margin-bottom: 10px;
   font-weight: 700;
 }
 
 header p {
-  margin-top: 10px;
   color: #94a3b8;
   font-size: 18px;
 }
 
-/* BUTTON */
 .btn {
   display: inline-block;
-  margin-top: 20px;
-  padding: 10px 18px;
+  margin-top: 22px;
+  padding: 11px 20px;
   background: #38bdf8;
   color: #0b1220;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-weight: 600;
+  transition: 0.3s;
 }
 
 .btn:hover {
   background: #0ea5e9;
+  transform: scale(1.05);
 }
 
 /* CONTAINER */
 .container {
-  max-width: 1000px;
+  max-width: 1050px;
   margin: auto;
-  padding: 40px 20px;
+  padding: 50px 20px;
 }
 
 /* CARDS */
 .card {
-  background: rgba(30, 41, 59, 0.6);
-  border: 1px solid rgba(148, 163, 184, 0.2);
-  backdrop-filter: blur(10px);
-  padding: 25px;
-  margin: 20px 0;
-  border-radius: 16px;
-  transition: 0.3s;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(56,189,248,0.15);
+  padding: 30px;
+  margin: 22px 0;
+  border-radius: 18px;
+  transition: all 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  border-color: #38bdf8;
+  transform: translateY(-10px);
+  box-shadow: 0 12px 35px rgba(56,189,248,0.15);
 }
 
 h2 {
   color: #38bdf8;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  font-size: 22px;
 }
 
 /* TAGS */
 .tag {
   display: inline-block;
-  background: #1e293b;
   padding: 6px 12px;
-  margin: 5px 5px 0 0;
+  margin: 6px 6px 0 0;
+  background: #1e293b;
   border-radius: 20px;
   font-size: 12px;
   border: 1px solid #334155;
@@ -97,11 +112,11 @@ h2 {
 
 /* LIST */
 ul {
-  padding-left: 20px;
+  padding-left: 18px;
   color: #cbd5e1;
 }
 
-/* CONTACT LINKS */
+/* CONTACT */
 a {
   color: #38bdf8;
   text-decoration: none;
@@ -114,36 +129,37 @@ a:hover {
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 25px;
+  padding: 30px;
   color: #64748b;
   border-top: 1px solid #1e293b;
-  margin-top: 40px;
+  margin-top: 50px;
   font-size: 14px;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 38px;
+  }
+
+  header img {
+    width: 140px;
+    height: 140px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<header style="text-align:center; padding:100px 20px;">
+<header>
+  <img src="file_00000000e6d47246824fc5163f2b9a1b.png" alt="Profile Photo">
 
-  <img src="file_00000000e6d47246824fc5163f2b9a1b.png"
-  alt="My Photo"
-  style="width:170px;height:170px;border-radius:50%;
-  object-fit:cover;border:4px solid #38bdf8;
-  box-shadow:0 0 25px rgba(56,189,248,0.4);
-  margin-bottom:15px;">
+  <h1>Sayed Ali Farhan</h1>
 
-  <h1 style="font-size:52px;color:#38bdf8;margin-bottom:10px;">
-    Sayed Ali Farhan
-  </h1>
-
-  <p style="color:#94a3b8;font-size:18px;">
-    Student • Developer • Tech Enthusiast
-  </p>
+  <p>Student • Developer • Tech Enthusiast</p>
 
   <a href="#contact" class="btn">Contact Me</a>
-
 </header>
 
 <div class="container">
@@ -155,8 +171,6 @@ footer {
       and building real-world projects. I enjoy learning web development and improving my skills step by step.
     </p>
 
-    <br>
-
     <span class="tag">HTML</span>
     <span class="tag">CSS</span>
     <span class="tag">JavaScript</span>
@@ -166,30 +180,22 @@ footer {
   <div class="card">
     <h2>🚀 Projects</h2>
     <ul>
-      <li>Personal Portfolio Website (this project)</li>
+      <li>Personal Portfolio Website (Live on GitHub Pages)</li>
       <li>Python Beginner Projects</li>
       <li>More projects coming soon</li>
     </ul>
   </div>
 
-  <div class="card">
-    <h2>📝 Blog</h2>
-    <p>
-      I will document my learning journey, challenges, and progress in programming and technology.
-      This is where I grow step by step.
-    </p>
-  </div>
-
   <div class="card" id="contact">
     <h2>📬 Contact</h2>
-    <p>Email: haidarisayedali6@email.com</p>
-    <p>GitHub: https://haidarisayedali6-ux.github.io/My-portfolio/ </p>
+    <p>Email: <a href="mailto:haidarisayedali6@email.com">Send Email</a></p>
+    <p>GitHub: <a href="https://github.com/">Visit GitHub</a></p>
   </div>
 
 </div>
 
 <footer>
-  © 2026 My Portfolio • Built with passion and consistency 🚀
+  © 2026 Sayed Ali Farhan • Built with consistency 🚀
 </footer>
 
 </body>
